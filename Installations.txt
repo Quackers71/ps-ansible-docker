@@ -72,3 +72,45 @@ tree -L 1
 
 cd todobackend
 git tag
+
+# 3. Create the Sample Application
+
+# *** To fix pip instll error use :
+sudo python3 -m pip uninstall pip && sudo apt install python3-pip --reinstall
+
+# Install django
+pip install django
+sudo apt-get update
+sudo apt-get install python-django
+django-admin --version
+
+django-admin startproject todobackend
+
+# create and move the appropiate folders and files
+# then add and commit the "Initial commit"
+
+# Install the Virtual Environment
+pip install virtualenv
+sudo apt install virtualenv
+
+virtualenv venv
+source venv/bin/activate
+
+# Install the packages within the virtualenv
+pip install pip --upgrade
+pip install django
+pip install djangorestframework
+pip install django-cors-headers
+
+cd src/
+tree
+python manage.py startapp todo
+vim todobackend/settings.py
+vim todo/models.py
+python manage.py makemigrations todo
+python manage.py migrate
+vim todo/migrations/serializers.py  # New file
+vim todo/migrations/views.py        # New file
+vim todo/migrations/urls.py
+
+python manage.py runserver
